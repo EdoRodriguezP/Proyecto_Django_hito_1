@@ -17,7 +17,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" 
-                       href="{% url 'about' %}">About</a>
+                       href="{% url 'premium' %}">Premium</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" 
@@ -43,8 +43,8 @@
                         </form>
                     </li>
                 {% else %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Ingresar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registrarse</a></li>
+                    {% comment %} <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Ingresar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registrarse</a></li> {% endcomment %}
                 {% endif %}
             </ul>
         </div>
