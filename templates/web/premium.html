@@ -3,13 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% include "app/componentes/scripts.html" %}
+    {% include "componentes/scripts.html" %}
     <title>about</title>
 </head>
 <body>
-     {% include "app/componentes/header.html" %}
-</body>
+     {% include "componentes/navbar.html" %}
+    <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    {% for producto in productos %}
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{{producto.imagen.url}}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">{{producto.nombre}}</h5>
+                                    <!-- Product price-->
+                                    {{producto.precio}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
     <h1>about</h1>
-    {% include "app/componentes/footer.html" %}
+    {% include "componentes/footer.html" %}
 </body>
 </html>
